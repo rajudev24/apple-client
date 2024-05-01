@@ -1,5 +1,5 @@
-import AddContent from "./components/AddContent/AddContent";
-import ShowContent from "./components/ShowContent/ShowContent";
+import AddContent from "@/components/AddContent/AddContent";
+import ShowContent from "@/components/ShowContent/ShowContent";
 
 const admin = () => {
   return (

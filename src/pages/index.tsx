@@ -1,4 +1,10 @@
-import SingalmageCard from "./components/SingalmageCard/SingalmageCard";
+import { GetServerSideProps } from "next";
+import Header from "@/components/Header/Header";
+import SingalmageCard from "@/components/SingalmageCard/SingalmageCard";
+import DoubleImageCard from "@/components/DoubleImageCard/DoubleImageCard";
+import SliderSectionOne from "@/components/SliderSectionOne/SliderSectionOne";
+import SliderSectionTwo from "@/components/SliderSectionTwo/SliderSectionTwo";
+import Footer from "@/components/Footer/Footer";
 import image1 from "/public/imgs/banner.png";
 import image2 from "/public/imgs/pic.png";
 import image3 from "/public/imgs/pic-1.jpg";
@@ -8,14 +14,7 @@ import image6 from "/public/imgs/pic-4.png";
 import image7 from "/public/imgs/pic-5.png";
 import image8 from "/public/imgs/pic-6.png";
 import image9 from "/public/imgs/pic-7.png";
-import DoubleImageCard from "./components/DoubleImageCard/DoubleImageCard";
-import Footer from "./components/Footer/Footer";
-import SliderSectionTwo from "./components/SliderSectionTwo/SliderSectionTwo";
-import SliderSectionOne from "./components/SliderSectionOne/SliderSectionOne";
-
 import { IContent } from "../types";
-import { GetServerSideProps } from "next";
-import Header from "./components/Header/Header";
 
 export default function Home({ content }: { content: IContent[] }) {
   const dataObject: IContent =
