@@ -61,7 +61,7 @@ const UpdateContent = () => {
       }
     };
     fetchContent();
-  }, []);
+  }, [id]);
 
   const handleUploadImage = async () => {
     const formData = new FormData();
