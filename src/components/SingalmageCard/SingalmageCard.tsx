@@ -31,20 +31,24 @@ const SingalmageCard: React.FC<SingalmageCardProps> = (props) => {
         </h1>
         <p
           className={`${
-            bgColor === "black" ? "text-white mt- 1 sm:mt-2" : " mt- 1 sm:mt-2"
+            bgColor === "black"
+              ? "text-white mt- 1 sm:mt-2 font-semibold"
+              : " mt- 1 sm:mt-2 font-semibold"
           }`}
         >
           {" "}
           {subHeading}{" "}
         </p>
-        <button className=" px-4 py-2 bg-blue-500 text-white rounded-3xl">
-          Learn More
-        </button>
-        {btnTwo ? (
-          <button className="ml-2 font-semibold px-6 py-2 border border-blue-500 text-blue-500 rounded-full">
-            Buy
+        <div className="-mt-2">
+          <button className=" px-4 py-2 bg-blue-500 text-white rounded-3xl">
+            Learn More
           </button>
-        ) : null}
+          {btnTwo ? (
+            <button className="ml-2 font-semibold px-6 py-2 border-1 border-blue-500 text-blue-500 rounded-full">
+              Buy
+            </button>
+          ) : null}
+        </div>
       </div>
     </div>
   );

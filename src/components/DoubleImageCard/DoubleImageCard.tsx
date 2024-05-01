@@ -19,7 +19,7 @@ const DoubleImageCard: React.FC<DoubleImageCardProps> = ({
   const contentClass =
     conentPosition === "bottom" ? "absolute bottom-4" : "absolute sm:top-4";
   const headingClass = (bgColor: string | undefined) =>
-    `text-xl sm:text-4xl font-bold flex justify-center items-center ${
+    `text-xl sm:text-4xl font-bold flex justify-center items-center -mb-0.5 ${
       bgColor === "black" ? "text-white" : ""
     }`;
 
@@ -53,19 +53,29 @@ const DoubleImageCard: React.FC<DoubleImageCardProps> = ({
               {heading === "" ? "" : <FaApple />} {heading}
             </h1>
             {modelName && (
-              <p className="text-red-500 font-semibold"> {model} </p>
+              <span className="text-red-500 font-semibold "> {model} </span>
             )}
-            <p className={`${bgColor === "black" ? "text-white" : ""} mt-1`}>
-              {subHeading}
-            </p>
-            <button className=" px-4 py-2 bg-blue-500 text-white rounded-3xl">
-              Learn More
-            </button>
-            {btnTwo && heading && (
-              <button className="ml-2 font-semibold px-6 py-2 border border-blue-500 text-blue-500 rounded-full">
-                {heading === "Card" ? "Apply Now" : "Buy"}
+            <div className="w-72">
+              <p
+                className={`${
+                  bgColor === "black"
+                    ? "text-white font-semibold "
+                    : "font-semibold"
+                } `}
+              >
+                {subHeading}
+              </p>
+            </div>
+            <div className="-mt-2">
+              <button className=" px-4 py-2 bg-blue-500 text-white rounded-3xl">
+                Learn More
               </button>
-            )}
+              {btnTwo && heading && (
+                <button className="ml-2 font-semibold px-6 py-2 border-1 border-blue-500 text-blue-500 rounded-full">
+                  {heading === "Card" ? "Apply Now" : "Buy"}
+                </button>
+              )}
+            </div>
           </div>
         </div>
       ))}
