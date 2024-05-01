@@ -36,7 +36,7 @@ const ShowContent = () => {
     }
     return acc;
   }, {});
-  console.log(content);
+
   return (
     <>
       <div className="sm:flex justify-around">

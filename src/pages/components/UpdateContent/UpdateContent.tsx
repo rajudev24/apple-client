@@ -7,17 +7,30 @@ const UpdateContent = () => {
   const router = useRouter();
   const { id } = router.query;
   const [content, setContent] = useState<any>();
-  const [heading, setHeading] = useState("");
-  const [subheading, setSubheading] = useState("");
-  const [image, setImage] = useState<File | null>(null);
-  const [imageUrl, setImageUrl] = useState("");
-  const [submitting, setSubmitting] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const [formState, setFormState] = useState({
+    heading: "",
+    subheading: "",
+    image: null,
+    imageUrl: "",
+    submitting: false,
+  });
+
+  const { heading, subheading, image, imageUrl, submitting } = formState;
+
+  const handleInputChange = (e: any) => {
     const { name, value, files } = e.target;
-    if (name === "heading") setHeading(value);
-    if (name === "subheading") setSubheading(value);
-    if (name === "image" && files && files.length > 0) setImage(files[0]);
+    if (name === "heading" || name === "subheading") {
+      setFormState((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+    } else if (name === "image" && files && files.length > 0) {
+      setFormState((prevState) => ({
+        ...prevState,
+        image: files[0],
+      }));
+    }
   };
 
   useEffect(() => {
@@ -29,16 +42,17 @@ const UpdateContent = () => {
         const result = await res.json();
         if (result) {
           setContent(result.data);
-          setHeading(
-            result.data?.banner?.heading ||
+          setFormState((prevState) => ({
+            ...prevState,
+            heading:
+              result.data?.banner?.heading ||
               result.data?.sectionOne?.heading ||
-              result.data?.sectionTwo?.heading
-          );
-          setSubheading(
-            result.data?.banner?.subheading ||
-              result.data?.sectionOne?.heading ||
-              result.data?.sectionTwo?.heading
-          );
+              result.data?.sectionTwo?.heading,
+            subheading:
+              result.data?.banner?.subheading ||
+              result.data?.sectionOne?.subheading ||
+              result.data?.sectionTwo?.subheading,
+          }));
         } else {
           console.log("Content not found");
         }
@@ -56,15 +70,13 @@ const UpdateContent = () => {
     }
     try {
       const response = await fetch(
-        "https://api.imgbb.com/1/upload?key=15744b6cf47c8879b2cbb847289f51e9",
+        "https://api.imgbb.com/1/upload?key=YOUR_API_KEY",
         {
           method: "POST",
           body: formData,
         }
       );
-
       const responseData = await response.json();
-      setImageUrl(responseData.data.url);
       return responseData.data.url;
     } catch (error) {
       console.error("Error uploading image:", error);
@@ -75,7 +87,10 @@ const UpdateContent = () => {
   const handleSubmitForm = async (e: any) => {
     e.preventDefault();
     try {
-      setSubmitting(true);
+      setFormState((prevState) => ({
+        ...prevState,
+        submitting: true,
+      }));
       const imageUrl = await handleUploadImage();
       let key = "";
       if (content.banner) {
@@ -112,7 +127,10 @@ const UpdateContent = () => {
       }
     } catch (error) {
       console.error("Error handling form submission:", error);
-      setSubmitting(false);
+      setFormState((prevState) => ({
+        ...prevState,
+        submitting: false,
+      }));
     }
   };
 
