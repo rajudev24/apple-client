@@ -13,7 +13,7 @@ import Footer from "./components/Footer/Footer";
 import SliderSectionTwo from "./components/SliderSectionTwo/SliderSectionTwo";
 import SliderSectionOne from "./components/SliderSectionOne/SliderSectionOne";
 
-import { IContent } from "./types";
+import { IContent } from "../types";
 import { GetServerSideProps } from "next";
 import Header from "./components/Header/Header";
 

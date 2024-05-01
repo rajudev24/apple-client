@@ -1,4 +1,4 @@
-import { IContent } from "@/pages/types";
+import { IContent } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
