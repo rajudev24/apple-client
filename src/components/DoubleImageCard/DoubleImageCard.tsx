@@ -58,11 +58,11 @@ const DoubleImageCard: React.FC<DoubleImageCardProps> = ({
             <p className={`${bgColor === "black" ? "text-white" : ""} mt-1`}>
               {subHeading}
             </p>
-            <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded-3xl">
+            <button className=" px-4 py-2 bg-blue-500 text-white rounded-3xl">
               Learn More
             </button>
             {btnTwo && heading && (
-              <button className="ml-2 font-semibold mt-2 px-6 py-2 border border-blue-500 text-blue-500 rounded-full">
+              <button className="ml-2 font-semibold px-6 py-2 border border-blue-500 text-blue-500 rounded-full">
                 {heading === "Card" ? "Apply Now" : "Buy"}
               </button>
             )}

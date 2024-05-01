@@ -72,7 +72,7 @@ export default function Home({ content }: { content: IContent[] }) {
         btnTwo="yes"
         bgColorOne="black"
         headingOne=""
-        headingTwo={dataObject.sectionTwo?.heading}
+        headingTwo={dataObject.sectionTwo?.heading || "Vision Pro"}
         subHeadingOne={
           dataObject.sectionOne?.subheading ||
           "Apple Worldwide Developers Conference.Join us online June 10–14."
