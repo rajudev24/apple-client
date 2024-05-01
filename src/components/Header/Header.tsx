@@ -16,13 +16,13 @@ const Header = () => {
       fixed="top"
     >
       <Container>
-        <Navbar.Brand className="ms-28">
+        <Navbar.Brand className="ms-20">
           {" "}
           <FaApple />{" "}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
-        <Nav className="">
+        <Nav className="me-20">
           <Nav.Link>Store</Nav.Link>
           <Nav.Link className="mx-2">Mac</Nav.Link>
           <Nav.Link>iPad</Nav.Link>

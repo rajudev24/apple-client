@@ -70,14 +70,14 @@ const UpdateContent = () => {
     }
     try {
       const response = await fetch(
-        "https://api.imgbb.com/1/upload?key=YOUR_API_KEY",
+        "https://api.imgbb.com/1/upload?key=15744b6cf47c8879b2cbb847289f51e9",
         {
           method: "POST",
           body: formData,
         }
       );
       const responseData = await response.json();
-      return responseData.data.url;
+      return responseData?.data?.url;
     } catch (error) {
       console.error("Error uploading image:", error);
       throw error;
@@ -179,6 +179,7 @@ const UpdateContent = () => {
             accept="image/*"
             className="w-full px-3 py-2 leading-tight focus:outline-none focus:shadow-outline"
             onChange={handleInputChange}
+            required
           />
         </div>
         <button
