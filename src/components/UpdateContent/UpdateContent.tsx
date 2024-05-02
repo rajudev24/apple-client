@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
@@ -52,6 +53,10 @@ const UpdateContent = () => {
               result.data?.banner?.subheading ||
               result.data?.sectionOne?.subheading ||
               result.data?.sectionTwo?.subheading,
+            imageUrl:
+              result.data?.banner?.imageUrl ||
+              result.data?.sectionOne?.imageUrl ||
+              result.data?.sectionTwo?.imageUrl,
           }));
         } else {
           console.log("Content not found");
@@ -169,6 +174,11 @@ const UpdateContent = () => {
             onChange={handleInputChange}
           />
         </div>
+        {imageUrl && imageUrl ? (
+          <div className="my-2">
+            <Image src={imageUrl} alt="image" width={400} height={300} />
+          </div>
+        ) : null}
         <div className="mb-4">
           <label htmlFor="image" className="block text-gray-700 font-bold mb-2">
             Image
@@ -182,6 +192,7 @@ const UpdateContent = () => {
             required
           />
         </div>
+
         <button
           type="submit"
           disabled={submitting}
@@ -192,6 +203,7 @@ const UpdateContent = () => {
           {submitting ? "Submitting..." : "Upload & Submit"}
         </button>
       </form>
+
       <ToastContainer />
     </div>
   );

@@ -122,22 +122,22 @@ const Footer = () => {
               </p>
             ))}
 
-            <div className="mt-4">
+            <div className=" mt-0 sm:mt-4">
               <span className="font-bold text-sm">Apple Wallet</span>
-              <p className="text-sm">Wallet</p>
+              <p className="my-0.5 text-sm">Wallet</p>
               <p className="my-0.5 text-sm">Apple Card</p>
-              <p className="text-sm">Apple Pay</p>
+              <p className="my-0.5 text-sm">Apple Pay</p>
               <p className="my-0.5 text-sm">Apple Cash</p>
             </div>
           </div>
           <div>
             <div>
               <span className="font-bold text-sm">Account</span>
-              <p className="text-sm">Manage Your Apple ID</p>
+              <p className="my-0.5 text-sm">Manage Your Apple ID</p>
               <p className="my-0.5 text-sm">Apple Store Account</p>
-              <p className="text-sm">iCloud.com</p>
+              <p className="my-0.5 text-sm">iCloud.com</p>
             </div>
-            <div className="mt-4">
+            <div className="mt-0 sm:mt-4">
               <span className="font-bold text-sm">Entertainment</span>
               {entertainmentMenu.map((item, index) => (
                 <p className="my-0.5 text-sm" key={index}>
@@ -146,7 +146,7 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          <div className="sm:mt-0 mt-4">
+          <div className="mt-0 sm:mt-4">
             <span className="font-bold text-sm">Apple Store</span>
             {storeMenu.map((item, index) => (
               <p className="my-0.5 text-sm" key={index}>
@@ -158,23 +158,23 @@ const Footer = () => {
             <div>
               <span className="font-bold text-sm">For Business</span>
               <p className="my-0.5 text-sm">Apple and Business</p>
-              <p className="text-sm">Shop for Business</p>
+              <p className="my-0.5 text-sm">Shop for Business</p>
             </div>
-            <div className="mt-4">
+            <div className="mt-0 sm:mt-4">
               <span className="font-bold text-sm">For Education</span>
-              <p className="text-sm">Apple and Education</p>
+              <p className="my-0.5 text-sm">Apple and Education</p>
               <p className="my-0.5 text-sm">Shop for K-12</p>
-              <p className="text-sm">Shop for College</p>
+              <p className="my-0.5 text-sm">Shop for College</p>
             </div>
-            <div className="mt-4">
+            <div className="mt-0 sm:mt-4">
               <span className="font-bold text-sm">For Healthcare</span>
-              <p className="text-sm">Apple in Healthcare</p>
+              <p className="my-0.5 text-sm">Apple in Healthcare</p>
               <p className="my-0.5 text-sm">Health on Apple Watch</p>
-              <p className="text-sm">Health Records on iPhone</p>
+              <p className="my-0.5 text-sm">Health Records on iPhone</p>
             </div>
-            <div className="mt-4">
+            <div className="mt-0 sm:mt-4">
               <span className="font-bold text-sm">For Government</span>
-              <p className="text-sm">Shop for Government</p>
+              <p className="my-0.5 text-sm">Shop for Government</p>
               <p className="my-0.5 text-sm">Shop for Veterans and Military</p>
             </div>
           </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -82,7 +83,6 @@ const AddContent = () => {
         heading: "",
         subheading: "",
         image: null,
-        imageUrl: "",
         submitting: false,
       });
     } catch (error) {
@@ -165,6 +165,11 @@ const AddContent = () => {
           {formState.submitting ? "Submitting..." : "Upload & Submit"}
         </button>
       </form>
+      {imageUrl && imageUrl ? (
+        <div>
+          <Image src={imageUrl} alt="image" width={300} height={300} />
+        </div>
+      ) : null}
       <ToastContainer />
     </div>
   );
